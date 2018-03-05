@@ -1,3 +1,144 @@
+
+@charset "UTF-8";
+body{
+  background-image: url("background.jpg");
+}
+#title{
+  position: absolute;
+  color: #9d9b9b;
+  text-align: center;
+  left: 40%;
+}
+#sidenav{
+  margin-left: 2px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: #45453f;
+  width: 130px;
+  height: 837px;
+}
+
+#sidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#sidenav a:hover{
+left: 0;
+}
+
+#home {
+top: 30%;
+background-color:  #9d9b9b;
+}
+
+#aboutUs{
+top: 40%;
+background-color:  #9d9b9b;
+}
+
+#price{
+top: 50%;
+background-color: #9d9b9b;
+}
+
+#sidenav img{
+width: 100px;
+}
+#inf p {
+  padding: 20px;
+}
+
+#main {
+  color: #9d9b9b;
+  position: absolute;
+  text-align: left;
+  top: 200px;
+  right: 50px;
+  left: 250px;
+}
+#main p{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#main img{
+  max-width: 100%;
+  height: auto;
+  right: 8%;
+  top: 25%;
+  border-style: solid;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#logingSighn {
+color: #9d9b9b;
+text-decoration: none;
+position: absolute;
+visibility: visible;
+right: 15px;
+top: 15px;
+}
+
+#prava {
+  text-align: center;
+  color: #9d9b9b;
+  margin-top: 10px;
+  padding: 10px;
+  left: 40%;
+}
+.LogIn{
+  text-align: center;
+  margin: 100px;
+  padding: 20px;
+}
+.LogIn input{
+  width: 200px;
+  border-style: groove;
+  border-radius: 5px 5px 5px 5px;
+  padding: 10px;
+  margin: 8px;
+}
+
+#registerSighn{
+  color: #9d9b9b;
+  text-decoration: none;
+  position: absolute;
+  visibility: visible;
+  right: 15px;
+  top: 15px;
+}
+
+#loginDetails{
+  text-align: center;
+  color: #9d9b9b;
+  text-decoration: underline;
+}
+.menu p{
+  text-align: center;
+  color: #9d9b9b;
+}
+
+.register{
+  text-align: center;
+  margin:100px;
+  padding: 20px;
+}
+
+.register input{
+  width: 200px;
+  padding: 10px;
+  margin: 8px;
+  border-style: groove;
+  border-radius: 5px 5px 5px 5px;
+
+}
+=======
 @charset "UTF-8";
 body{
   background-image: url("background.jpg");
