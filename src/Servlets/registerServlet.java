@@ -1,7 +1,13 @@
 package Servlets;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+
 import Beans.*;
+import Validation.userValidation;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,9 +40,20 @@ public class registerServlet extends HttpServlet {
 		String userName = request.getParameter("uName");
 		String eMail = request.getParameter("eMail");
 		String country = request.getParameter("country");
-		String pass = request.getParameter("pass");	
+		String pass = request.getParameter("pass");
+		if(firstName.isEmpty()||lastName.isEmpty()||userName.isEmpty()||eMail.isEmpty()||country.isEmpty()||pass.isEmpty()) {
+		
+			    response.setContentType("text/html; charset = UTF-8");
+	            PrintWriter pw = response.getWriter();
+	            pw.println("Всички полета са задължителни!");
+		}
+		if(!userValidation.validate(eMail)) {
+			System.out.println(userValidation.validate(eMail));
+		}
+		else
+			System.out.println("Super!");
+		
 		user user = new user(firstName,lastName,userName,eMail,country,pass);
 		user.insertIntoDB();   
 	}
-
 }

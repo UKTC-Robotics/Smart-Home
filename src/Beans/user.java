@@ -1,9 +1,8 @@
 package Beans;
 
+import java.io.PrintWriter;
 import java.sql.*;
-
 import javax.xml.bind.DatatypeConverter;
-
 import org.bouncycastle.jcajce.provider.digest.SHA3;
 import org.bouncycastle.util.encoders.*;
 
@@ -32,16 +31,16 @@ public class user {
     
     
 	}
+    
+    public user( String userName, String pass) {
+    	this.userName=userName;
+    	this.pass=pass;
+	}
 public void hash() {
-	String input = "Hello world !";
-	String str;
     SHA3.DigestSHA3 digestSHA3 = new SHA3.Digest512();
     byte[] digest = digestSHA3.digest(pass.getBytes());
-    str=Hex.toHexString(digest);
-    System.out.println("SHA3-512 = " + str);
-    byte[] bytes = DatatypeConverter.parseHexBinary(str);
-    String result= new String(bytes);
-pass=result;
+    pass=Hex.toHexString(digest);
+    System.out.println("SHA3-512 = " + pass);
 
 }
     
@@ -62,9 +61,35 @@ pass=result;
 		 ps.executeUpdate();
     	}
     	catch(SQLException e) {
-    		e.printStackTrace();}
+    		e.printStackTrace();
+    		}
+    	}
+    
+    public void userCheking() {
+    	java.sql.PreparedStatement ps;
+        Connection con;
+        ResultSet rs;
+        hash();
+        String query = "SELECT * FROM user WHERE userName=? AND pass=?";
+try {
+        con=connectivity.connectivity();
+ 		 ps = con.prepareStatement(query);		 
+		 ps.setString(1,userName);
+		 ps.setString(2,pass);
+		 ps.executeQuery();
+		 rs=ps.executeQuery();
+		if(rs.first())
+		{System.out.println("Logging successful");
+    }
+		else {
+			 System.out.println("Logging unsuccesful, please try again");
+		 }
+}
+		 catch(SQLException e) {
+	    		e.printStackTrace();		
     }
 }
+    }
 
 
 

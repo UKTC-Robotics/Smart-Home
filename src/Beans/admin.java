@@ -5,10 +5,10 @@ public class admin {
 	private String firstName;
 	private String userName;
 	private String pass;
+
 	
 	public admin(String firstName, String userName, String pass) {
 		
-		super();
 		this.firstName = firstName;
 		this.userName = userName;
 		this.pass = pass;
