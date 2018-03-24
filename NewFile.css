@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+body {
+   background-image();
+  background: url("746939-beautiful-computer-background-wallpaper-1920x1080.jpg");
+   background-repeat: no-repeat;
+   background-size: 100%;
+}
+.register{
+  position: absolute;
+  right: 30%;
+  top: 4%;
+  margin:100px;
+  padding: 20px;
+}
+
+.register input{
+  background-color: black;
+  color: white;
+  width: 200px;
+  padding: 10px;
+  margin: 8px;
+  border-style: groove;
+  border-color: blue;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#sign{
+position: absolute;
+left: 8%;
+top: 50%;
+color: GREY;
+}
+
+.LogIn{
+  position: absolute;
+  top: 4%;
+  left: 3%;
+  margin: 100px;
+  padding: 20px;
+}
+.LogIn input{
+  background-color: black;
+  width: 200px;
+  border-style: groove;
+  border-radius: 5px 5px 5px 5px;
+  border-color: blue;
+  color:white;
+  padding: 10px;
+  margin: 8px;
+}
